@@ -1,6 +1,4 @@
 
-open Printf
-
 type expr =
 	| Num of int
     | Plus of expr * expr        (* a + b *)
@@ -13,7 +11,7 @@ let input = [6; 5; 4; 2; 75; 50];;
 let goal = 537;;
 
 
-let rec insert_all_possible_indexes n ls =
+let insert_all_possible_indexes n ls =
 	let rec insert_into list index = (match (list, index) with
 		| (x :: xs, 0) -> n :: x :: xs
 		| (x :: xs, i) -> x :: insert_into xs (i-1)
@@ -36,7 +34,7 @@ let op_to_target (list: int list) (target: int) : expr option =
 		match ls, runningVal with
 		| _, i when i = target -> Some runningExpr
 		| [], _ -> None
-		| x :: xs, i -> 
+		| x :: xs, _ -> 
 			let add_branch = calculate (runningVal + x) (Plus(runningExpr, Num x)) xs in
 			if Option.is_some add_branch then
 				add_branch

@@ -1,0 +1,4 @@
+(executable
+ (public_name Countdown_Solver)
+ (name main)
+ (libraries Countdown_Solver))
