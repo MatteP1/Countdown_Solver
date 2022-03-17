@@ -7,7 +7,10 @@ let goal = 537
 
 let solution_opt = solve input goal;;
 
-print_int (List.length all_words);;
+let lg_input = ['s'; 't'; 'p'; 'b'; 'u'; 'a'; 'e'; 'r'; 's']
+let solutions = resolve lg_input 10;;
+
+print_str_list solutions;
 
 if Option.is_none solution_opt then
 	print_endline "No solution exists"
