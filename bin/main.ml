@@ -5,9 +5,9 @@ open Lettersgame.LettersGame
 let input = [6; 5; 4; 2; 75; 50]
 let goal = 537
 
-let solution_opt = solve input goal
+let solution_opt = solve input goal;;
 
-let _ = solve2;;
+print_int (List.length all_words);;
 
 if Option.is_none solution_opt then
 	print_endline "No solution exists"
